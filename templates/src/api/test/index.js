@@ -5,7 +5,7 @@ const INIT = {
 }
 export function GetTest() {
 	return FETCH(
-		'./test.json',
+		'https://reqres.in/api/users',
 		INIT
 	)
 }

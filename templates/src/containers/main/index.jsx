@@ -5,9 +5,9 @@ import Main from '../../components/main'
 
 
 const mapState = (state) => {
-  console.log(state.test)
+  console.log(state.test.test)
   return {
-    test: state.test
+    test: state.test.test
   }
 }
 const mapDispatch = {
@@ -15,6 +15,9 @@ const mapDispatch = {
 }
 
 class MainContainer extends React.Component {
+  componentDidMount() {
+    this.props.SetTest()
+  }
   render() {
     return(
       <Main
