@@ -5,7 +5,7 @@ import Main from '../../components/main'
 
 
 const mapState = (state) => {
-  console.log(state.test.test)
+  console.log(state.test)
   return {
     test: state.test.test
   }
