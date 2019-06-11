@@ -5,9 +5,8 @@ import Main from '../../components/main'
 
 
 const mapState = (state) => {
-  console.log(state.test)
   return {
-    test: state.test.test
+    test: state.test.user
   }
 }
 const mapDispatch = {
@@ -15,8 +14,8 @@ const mapDispatch = {
 }
 
 class MainContainer extends React.Component {
-  componentDidMount() {
-    this.props.SetTest()
+  async componentDidMount() {
+    await this.props.SetTest()
   }
   render() {
     return(
