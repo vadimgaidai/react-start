@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { SetTest } from '../../store/test/action'
-import Main from '../../components/main'
+import Test from '../../components/test'
 
 
 const mapState = (state) => {
@@ -13,13 +13,13 @@ const mapDispatch = {
   SetTest
 }
 
-class MainContainer extends React.Component {
+class TestContainer extends React.Component {
   async componentDidMount() {
     await this.props.SetTest()
   }
   render() {
     return(
-      <Main
+      <Test
         test={this.props.test}
       />
     )
@@ -27,4 +27,4 @@ class MainContainer extends React.Component {
 }
 
 
-export default connect(mapState, mapDispatch)(MainContainer)
+export default connect(mapState, mapDispatch)(TestContainer)
