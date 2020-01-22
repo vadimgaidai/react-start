@@ -3,7 +3,7 @@ import React from 'react'
 export default class Test extends React.Component {
   render() {
     return(
-      <div class="test">
+      <div className="test">
         {
           this.props.test.map((user) => {
             return (

@@ -4,9 +4,9 @@ import Test from '../containers/test'
 export default class TestPage extends React.Component {
   render() {
     return (
-      <div className="test">
+      <main className="main">
         <Test />
-      </div>
+      </main>
     )
   }
 }
