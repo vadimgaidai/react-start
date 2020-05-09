@@ -39,6 +39,7 @@ module.exports = {
 				proseWrap: 'never',
 			},
 		],
+		'import/prefer-default-export': 'off',
 		'react/jsx-uses-vars': 'error',
 		'react/jsx-uses-react': 'error',
 		'no-tabs': ['error', { allowIndentationTabs: true }],
