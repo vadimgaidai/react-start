@@ -1,26 +1,28 @@
-/* eslint-disable no-tabs */
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { loadTestData } from '../../redux/testData/action'
 
-const Trial = ({ test, getApi }) => {
+const Trial = ({ test, getTestData }) => {
 	useEffect(() => {
-		getApi()
-	}, [getApi])
+		;(async () => {
+			await getTestData()
+		})()
+	}, [getTestData])
+
 	return (
 		<div>
 			<h1>Trial page</h1>
-			{test.map((user) => {
-				return <div key={user.id}>{Object.values(user)}</div>
-			})}
+			{test.map((user) => (
+				<div key={user.id}>{Object.values(user)}</div>
+			))}
 		</div>
 	)
 }
 
 Trial.propTypes = {
 	test: PropTypes.array,
-	getApi: PropTypes.func,
+	getTestData: PropTypes.func,
 }
 
 const mapState = ({ testReducer }) => {
@@ -31,7 +33,7 @@ const mapState = ({ testReducer }) => {
 
 const mapActions = (dispatch) => {
 	return {
-		getApi: () => dispatch(loadTestData()),
+		getTestData: () => dispatch(loadTestData()),
 	}
 }
 
