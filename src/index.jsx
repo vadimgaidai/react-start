@@ -1,11 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { BrowserRouter } from 'react-router-dom'
-import { createStore, compose } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import { rootReducer } from './redux/rootReducer'
+
 import Header from './components/Header/Header.jsx'
 import App from './App.jsx'
+
+import api from './api/api'
+import { load, send } from './utils/fetch'
+
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 
@@ -16,7 +23,13 @@ const composeEnhancers =
 		  })
 		: compose
 
-const store = createStore(rootReducer, composeEnhancers())
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+api({
+	load,
+	send,
+	store,
+})
 
 ReactDOM.render(
 	<Provider store={store}>
