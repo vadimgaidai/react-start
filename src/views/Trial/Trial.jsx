@@ -17,7 +17,9 @@ const Trial = ({ test, getTestData }) => {
 		<div>
 			<h1>Trial page</h1>
 			{testData.length ? (
-				testData.map((user) => <div key={user.id}>{Object.values(user)}</div>)
+				testData.map((user) => (
+					<span key={user.id}>{JSON.stringify(user)}</span>
+				))
 			) : (
 				<div>Loading...</div>
 			)}

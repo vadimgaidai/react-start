@@ -1,5 +1,5 @@
-export default ({ load }) => ({
+export default ({ request }) => ({
 	async GetTests() {
-		return load({ url: 'https://reqres.in/api/users' })
+		return request({ url: 'https://reqres.in/api/users' })
 	},
 })

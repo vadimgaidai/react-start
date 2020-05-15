@@ -11,7 +11,7 @@ import Header from './components/Header/Header.jsx'
 import App from './App.jsx'
 
 import api from './api/api'
-import { load, send } from './utils/fetch'
+import { request } from './utils/fetch'
 
 import * as serviceWorker from './serviceWorker'
 import './index.css'
@@ -26,8 +26,7 @@ const composeEnhancers =
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 api({
-	load,
-	send,
+	request,
 	store,
 })
 

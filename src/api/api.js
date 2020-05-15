@@ -1,12 +1,12 @@
 import tests from './tests'
 
-export default ({ load, send, store }) => {
+export default ({ request, store }) => {
 	const api = {}
 	const modules = {
 		tests,
 	}
 	Object.entries(modules).forEach(([key, value]) => {
-		api[key] = value({ load, send, store })
+		api[key] = value({ request, store })
 	})
 	window.$api = api
 }
