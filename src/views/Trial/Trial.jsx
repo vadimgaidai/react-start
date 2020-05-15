@@ -1,21 +1,26 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { loadTestData } from '../../redux/testData/action'
 
 const Trial = ({ test, getTestData }) => {
+	const { testData = [] } = useSelector(({ testReducer }) => testReducer)
+	const dispatch = useDispatch()
+
 	useEffect(() => {
 		;(async () => {
-			await getTestData()
+			await dispatch(loadTestData())
 		})()
-	}, [getTestData])
+	}, [dispatch])
 
 	return (
 		<div>
 			<h1>Trial page</h1>
-			{test.map((user) => (
-				<div key={user.id}>{Object.values(user)}</div>
-			))}
+			{testData.length ? (
+				testData.map((user) => <div key={user.id}>{Object.values(user)}</div>)
+			) : (
+				<div>Loading...</div>
+			)}
 		</div>
 	)
 }
@@ -25,16 +30,4 @@ Trial.propTypes = {
 	getTestData: PropTypes.func,
 }
 
-const mapState = ({ testReducer }) => {
-	return {
-		test: testReducer?.testData,
-	}
-}
-
-const mapActions = (dispatch) => {
-	return {
-		getTestData: () => dispatch(loadTestData()),
-	}
-}
-
-export default connect(mapState, mapActions)(Trial)
+export default Trial
