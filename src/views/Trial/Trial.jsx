@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadTestData } from '../../redux/testData/action'
+import './index.scss'
 
 const Trial = ({ test, getTestData }) => {
 	const { testData = [] } = useSelector(({ testReducer }) => testReducer)
@@ -14,7 +15,7 @@ const Trial = ({ test, getTestData }) => {
 	}, [dispatch])
 
 	return (
-		<div>
+		<div className="trial">
 			<h1>Trial page</h1>
 			{testData.length ? (
 				testData.map((user) => (

@@ -8,13 +8,13 @@ import thunk from 'redux-thunk'
 import { rootReducer } from './redux/rootReducer'
 
 import Header from './components/Header/Header.jsx'
-import App from './App.jsx'
+import App from './containers/App.jsx'
 
 import api from './api/api'
 import { request } from './utils/fetch'
 
 import * as serviceWorker from './serviceWorker'
-import './index.css'
+import './assets/style/index.scss'
 
 const composeEnhancers =
 	typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -25,10 +25,7 @@ const composeEnhancers =
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
-api({
-	request,
-	store,
-})
+api({ request, store })
 
 ReactDOM.render(
 	<Provider store={store}>

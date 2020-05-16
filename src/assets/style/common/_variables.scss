@@ -1,0 +1,20 @@
+@import './mixins';
+@import './media';
+
+// Fonts
+$reserve-fonts: sans-serif;
+$font-primary: 'OpenSans', $reserve-fonts;
+
+// Colors
+$primary-color: #000;
+$success-clolor: #2ecc71;
+$error-color: #e74c3c;
+
+// Backgrounds
+$primary-bg: #fff;
+
+// Transition
+$primary-transition: 0.5s;
+
+// Sizes
+$max-width: 1440px;
