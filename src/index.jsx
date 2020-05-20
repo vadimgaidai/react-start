@@ -7,8 +7,9 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { rootReducer } from './redux/rootReducer'
 
-import Header from './components/Header/Header.jsx'
+import Header from './components/header/Header.jsx'
 import App from './containers/App.jsx'
+import Footer from './components/footer/Footer.jsx'
 
 import api from './api/api'
 import { request } from './utils/fetch'
@@ -32,6 +33,7 @@ ReactDOM.render(
 		<BrowserRouter>
 			<Header />
 			<App />
+			<Footer />
 		</BrowserRouter>
 	</Provider>,
 	document.getElementById('root')

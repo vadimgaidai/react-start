@@ -1,0 +1,27 @@
+.header {
+	&__navigation {
+		padding: 20px;
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+	}
+	&__item {
+		display: block;
+		margin-right: 15px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__link {
+		font-weight: 300;
+		text-decoration: none;
+		color: $link-color;
+		transition: all $primary-transition ease;
+
+		&:hover {
+			color: rgba($link-color, 0.5);
+		}
+	}
+}

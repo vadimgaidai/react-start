@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './header.scss'
 
 const Header = () => {
 	const likns = [
@@ -18,13 +19,13 @@ const Header = () => {
 	]
 
 	return (
-		<header>
-			<nav>
-				<ul>
+		<header className="header">
+			<nav className="header__navigation">
+				<ul className="header__list">
 					{likns.length ? (
 						likns.map(({ name, id, path, exact }) => (
-							<li key={id}>
-								<NavLink to={path} exact={exact}>
+							<li className="header__item" key={id}>
+								<NavLink className="header__link" to={path} exact={exact}>
 									{name}
 								</NavLink>
 							</li>

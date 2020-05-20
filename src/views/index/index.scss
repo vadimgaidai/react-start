@@ -1,0 +1,35 @@
+.index {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 15px;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	text-align: center;
+
+	&__logo {
+		height: 40vmin;
+		pointer-events: none;
+		animation: Index-logo-spin infinite 20s linear;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $link-color;
+		transition: all $primary-transition ease;
+
+		&:hover {
+			color: rgba($link-color, 0.5);
+		}
+	}
+
+	@keyframes Index-logo-spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}

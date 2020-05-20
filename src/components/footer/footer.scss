@@ -1,0 +1,13 @@
+.footer {
+	padding: 20px;
+	text-align: center;
+	&__link {
+		font-size: 17px;
+		text-decoration: none;
+		color: $link-color;
+		transition: all $primary-transition ease;
+		&:hover {
+			color: rgba($link-color, 0.5);
+		}
+	}
+}
