@@ -2,14 +2,35 @@
 	padding: 0 15px;
 
 	&__caption {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 15px;
 		font-size: 40px;
 		text-align: center;
 		color: $primary-color;
+	}
+
+	&__icon {
+		width: 70px;
+		height: 70px;
+		margin: 0 20px 0;
+		animation: test-icon infinite 5s linear;
+		fill: $primary-color;
 	}
 
 	&__user {
 		font-size: 18px;
 		color: $primary-color;
 		line-height: 35px;
+	}
+
+	@keyframes test-icon {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
 	}
 }

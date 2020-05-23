@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadTestData } from '../../redux/testData/action'
+import Api from '../../icons/Api'
 
 import './trial.scss'
 
@@ -17,7 +18,9 @@ const Trial = ({ test, getTestData }) => {
 
 	return (
 		<main className="trial">
-			<h1 className="trial__caption">Test API</h1>
+			<h1 className="trial__caption">
+				Test {<Api className="trial__icon" />} API
+			</h1>
 			{testData.length ? (
 				testData.map((user) => (
 					<p className="trial__user" key={user.id}>
