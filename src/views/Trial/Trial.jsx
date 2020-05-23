@@ -25,7 +25,7 @@ const Trial = ({ test, getTestData }) => {
 					</p>
 				))
 			) : (
-				<div>Loading...</div>
+				<div className="trial__user">Loading...</div>
 			)}
 		</main>
 	)

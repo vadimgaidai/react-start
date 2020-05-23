@@ -1,9 +1,10 @@
 import React from 'react'
+import Logo from '../../icons/Logo'
 import './index.scss'
 
 const Index = () => (
 	<main className="index">
-		<img className="index__logo" alt="logo" />
+		<Logo className="index__logo" />
 		<p>
 			Edit <code>src/App.js</code> and save to reload.
 		</p>
