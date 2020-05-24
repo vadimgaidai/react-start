@@ -4,32 +4,32 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0 15px;
-	font-size: calc(10px + 2vmin);
 	color: white;
+	font-size: calc(10px + 2vmin);
 	text-align: center;
 
 	&__logo {
 		height: 40vmin;
-		pointer-events: none;
 		animation: Index-logo-spin infinite 20s linear;
+		pointer-events: none;
+
+		@keyframes Index-logo-spin {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
 	}
 
 	&__link {
-		text-decoration: none;
 		color: $link-color;
+		text-decoration: none;
 		transition: all $primary-transition ease;
 
 		&:hover {
 			color: rgba($link-color, 0.5);
-		}
-	}
-
-	@keyframes Index-logo-spin {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
 		}
 	}
 }

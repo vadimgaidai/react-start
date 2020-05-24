@@ -6,9 +6,9 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 15px;
+		color: $primary-color;
 		font-size: 40px;
 		text-align: center;
-		color: $primary-color;
 	}
 
 	&__icon {
@@ -17,20 +17,20 @@
 		margin: 0 20px 0;
 		animation: test-icon infinite 5s linear;
 		fill: $primary-color;
+
+		@keyframes test-icon {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
 	}
 
 	&__user {
-		font-size: 18px;
 		color: $primary-color;
+		font-size: 18px;
 		line-height: 35px;
-	}
-
-	@keyframes test-icon {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
 	}
 }
