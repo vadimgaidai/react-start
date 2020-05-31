@@ -9,6 +9,7 @@ const JWT = async () => {
 	const accessToken = localStorage.getItem('access_token')
 	const isExpired = !expiredIn || expiredIn < Date.now() / 1000
 	if (isExpired) {
+		// await updateTokens
 		return localStorage.getItem('access_token')
 	}
 	return accessToken
