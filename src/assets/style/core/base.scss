@@ -9,8 +9,8 @@
 }
 
 html {
-	font-size: 10px;
 	overflow: hidden;
+	font-size: 10px;
 	scroll-behavior: smooth;
 }
 
@@ -102,16 +102,16 @@ audio,
 video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	vertical-align: baseline;
+	border: 0;
 }
 
 [type='text/template'] {
 	display: none;
 }
 
-#root {
-	height: 100vh;
+.app {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
+	height: 100vh;
 }

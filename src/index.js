@@ -7,15 +7,17 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { rootReducer } from './redux/rootReducer'
 
-import Header from './components/header/Header.jsx'
-import App from './containers/App.jsx'
-import Footer from './components/footer/Footer.jsx'
+import Header from './components/header'
+import App from './containers/App'
+import Footer from './components/footer'
 
 import api from './api/api'
 import { request } from './utils/fetch'
 
 import * as serviceWorker from './serviceWorker'
 import './assets/style/index.scss'
+
+const entry = document.getElementById('root')
 
 const composeEnhancers =
 	typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
@@ -25,6 +27,8 @@ const composeEnhancers =
 		: compose
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+
+entry.classList.add('app')
 
 api({ request, store })
 
@@ -36,7 +40,7 @@ ReactDOM.render(
 			<Footer />
 		</BrowserRouter>
 	</Provider>,
-	document.getElementById('root')
+	entry
 )
 
 // If you want your app to work offline and load faster, you can change

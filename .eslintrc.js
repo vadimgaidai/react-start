@@ -44,12 +44,6 @@ module.exports = {
 		'react/jsx-uses-react': 'error',
 		'no-tabs': ['error', { allowIndentationTabs: true }],
 		semi: ['error', 'never'],
-		'react/jsx-filename-extension': [
-			2,
-			{
-				extensions: ['.jsx'],
-			},
-		],
 		'no-unused-expressions': [
 			'error',
 			{
