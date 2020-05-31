@@ -10,7 +10,7 @@ const App = () => {
 		<ScrollToTop>
 			<Switch>
 				<Route path="/" component={Index} exact />
-				<Route path="/trial" component={Trial} exact />
+				<Route path="/trial" component={Trial} />
 			</Switch>
 		</ScrollToTop>
 	)
