@@ -1,13 +1,14 @@
 import React from 'react'
-import './footer.scss'
+import { section, link } from './footer.module.scss'
 
 const Footer = () => {
 	return (
-		<footer className="footer">
+		<footer className={section}>
 			<a
-				className="footer__link"
+				className={link}
+				target="_blank"
+				rel="noopener noreferrer"
 				href="https://github.com/vadimgaidai"
-				target="_blunk"
 			>
 				@github
 			</a>

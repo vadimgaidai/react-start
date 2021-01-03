@@ -1,15 +1,15 @@
-import { LOAD_TEST_DATA } from '../actionTypes'
+import { LOAD_DATA } from '../actionTypes'
 
 const initialState = {
-	testData: [],
+	data: [],
 }
 
 export const testReducer = (state = initialState, { type, data }) => {
 	switch (type) {
-		case LOAD_TEST_DATA: {
+		case LOAD_DATA: {
 			return {
 				...state,
-				testData: data,
+				data,
 			}
 		}
 		default:

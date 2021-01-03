@@ -1,0 +1,14 @@
+.section {
+	padding: 20px;
+	text-align: center;
+}
+
+.link {
+	color: $link-color;
+	font-size: 17px;
+	text-decoration: none;
+	transition: all $primary-transition ease-in;
+	&:hover {
+		color: rgba($link-color, 0.5);
+	}
+}

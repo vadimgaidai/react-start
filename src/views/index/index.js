@@ -1,15 +1,15 @@
 import React from 'react'
 import Logo from '../../icons/Logo'
-import './index.scss'
+import { section, logo, link } from './index.module.scss'
 
 const Index = () => (
-	<main className="index">
-		<Logo className="index__logo" />
+	<main className={section}>
+		<Logo className={logo} />
 		<p>
 			Edit <code>src/App.js</code> and save to reload.
 		</p>
 		<a
-			className="index__link"
+			className={link}
 			href="https://reactjs.org"
 			target="_blank"
 			rel="noopener noreferrer"

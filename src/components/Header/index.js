@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './header.scss'
+import { section, navigation, list, link } from './header.module.scss'
 
 const Header = () => {
-	const likns = [
+	const links = [
 		{
 			id: 0,
 			name: 'Index',
@@ -19,20 +19,21 @@ const Header = () => {
 	]
 
 	return (
-		<header className="header">
-			<nav className="header__navigation">
-				<ul className="header__list">
-					{likns.length ? (
-						likns.map(({ name, id, path, exact }) => (
-							<li className="header__item" key={id}>
-								<NavLink className="header__link" to={path} exact={exact}>
-									{name}
-								</NavLink>
-							</li>
-						))
-					) : (
-						<li></li>
-					)}
+		<header className={section}>
+			<nav className={navigation}>
+				<ul className={list}>
+					{links?.map(({ id, path, name, exact }) => (
+						<li key={id}>
+							<NavLink
+								className={link}
+								to={path}
+								rel="noopener noreferrer"
+								exact={exact}
+							>
+								{name}
+							</NavLink>
+						</li>
+					))}
 				</ul>
 			</nav>
 		</header>

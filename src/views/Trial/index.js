@@ -1,35 +1,31 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from 'react-redux'
-import { loadTestData } from '../../redux/testData/action'
+
+import { loadData } from '../../redux/data/action'
+
 import Api from '../../icons/Api'
 
-import './trial.scss'
+import { section, caption, icon, item } from './trial.module.scss'
 
 const Trial = ({ test, getTestData }) => {
-	const { testData = [] } = useSelector(({ testReducer }) => testReducer)
+	const { data } = useSelector(({ testReducer }) => testReducer)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
 		;(async () => {
-			await dispatch(loadTestData())
+			await dispatch(loadData())
 		})()
 	}, [dispatch])
 
 	return (
-		<main className="trial">
-			<h1 className="trial__caption">
-				Test {<Api className="trial__icon" />} API
-			</h1>
-			{testData.length ? (
-				testData.map((user) => (
-					<p className="trial__user" key={user.id}>
-						{JSON.stringify(user)}
-					</p>
-				))
-			) : (
-				<div className="trial__user">Loading...</div>
-			)}
+		<main className={section}>
+			<h1 className={caption}>Test {<Api className={icon} />} API</h1>
+			{data?.map((user) => (
+				<p className={item} key={user.id}>
+					{JSON.stringify(user)}
+				</p>
+			))}
 		</main>
 	)
 }

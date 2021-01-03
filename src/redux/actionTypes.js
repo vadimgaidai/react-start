@@ -1,1 +1,1 @@
-export const LOAD_TEST_DATA = 'LOAD_TEST_DATA'
+export const LOAD_DATA = 'LOAD_DATA'

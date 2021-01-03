@@ -1,0 +1,36 @@
+.section {
+	padding: 0 15px;
+
+	@keyframes test-icon {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.caption {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 15px;
+	color: $primary-color;
+	font-size: 40px;
+	text-align: center;
+}
+
+.icon {
+	width: 70px;
+	height: 70px;
+	margin: 0 20px 0;
+	animation: test-icon infinite 5s linear;
+	fill: $primary-color;
+}
+
+.item {
+	color: $primary-color;
+	font-size: 18px;
+	line-height: 35px;
+}
