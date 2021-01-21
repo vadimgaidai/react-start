@@ -1,69 +1,143 @@
 module.exports = {
-	root: true,
-	env: {
-		browser: true,
-		es6: true,
-	},
-	settings: {
-		react: {
-			version: 'latest',
-		},
-	},
-	extends: [
-		'eslint:recommended',
-		'plugin:react/recommended',
-		'plugin:prettier/recommended',
-		'airbnb-base',
-		'prettier',
-		'react-app',
-	],
-	parserOptions: {
-		ecmaFeatures: {
-			jsx: true,
-			experimentalObjectRestSpread: true,
-		},
-		ecmaVersion: 2018,
-		sourceType: 'module',
-		parser: 'babel-eslint',
-	},
-	plugins: ['react', 'prettier'],
-	rules: {
-		'prettier/prettier': [
-			'warn',
-			{
-				semi: false,
-				singleQuote: true,
-				trailingComma: 'es5',
-				bracketSpacing: true,
-				printWidth: 80,
-				proseWrap: 'never',
-			},
-		],
-		'import/prefer-default-export': 'off',
-		'react/jsx-uses-vars': 'error',
-		'react/jsx-uses-react': 'error',
-		'no-tabs': ['error', { allowIndentationTabs: true }],
-		semi: ['error', 'never'],
-		'no-unused-expressions': [
-			'error',
-			{
-				allowShortCircuit: false,
-				allowTernary: true,
-				allowTaggedTemplates: false,
-			},
-		],
-		'no-use-before-define': [
-			'error',
-			{
-				functions: false,
-			},
-		],
-		'no-empty': ['error', { allowEmptyCatch: true }],
-		'no-plusplus': 'off',
-		'no-param-reassign': 'off',
-		'no-underscore-dangle': 'off',
-		'no-alert': 'error',
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-	},
+  extends: ['airbnb', 'prettier', 'prettier/react', 'react-app'],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2020,
+    ecmaFeatures: {
+      impliedStrict: true,
+      classes: true,
+      jsx: true,
+      experimentalObjectRestSpread: true,
+    },
+  },
+  settings: {
+    react: {
+      version: 'latest',
+    },
+  },
+  env: {
+    browser: true,
+    node: true,
+    jquery: true,
+    jest: true,
+  },
+  rules: {
+    'no-debugger': 0,
+    'no-alert': 0,
+    'no-await-in-loop': 0,
+    'no-return-assign': ['error', 'except-parens'],
+    'no-restricted-syntax': [
+      2,
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+    'no-empty': ['error', { allowEmptyCatch: true }],
+    'no-tabs': ['error', { allowIndentationTabs: true }],
+    'no-unused-vars': [
+      1,
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: 'res|next|^err',
+      },
+    ],
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'all',
+      },
+    ],
+    'arrow-body-style': [2, 'as-needed'],
+    'no-unused-expressions': [
+      2,
+      {
+        allowTaggedTemplates: true,
+      },
+    ],
+    'no-use-before-define': [
+      'error',
+      {
+        functions: false,
+      },
+    ],
+    'no-plusplus': 0,
+    'no-param-reassign': [
+      2,
+      {
+        props: false,
+      },
+    ],
+    'no-console': 0,
+    'import/prefer-default-export': 0,
+    import: 0,
+    'func-names': 0,
+    'space-before-function-paren': 0,
+    'comma-dangle': 0,
+    'max-len': 0,
+    'import/extensions': 0,
+    'no-underscore-dangle': 0,
+    'consistent-return': 0,
+    'react/display-name': 1,
+    'react/no-array-index-key': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/prefer-stateless-function': 0,
+    'react/forbid-prop-types': 0,
+    'react/no-unescaped-entities': 0,
+    'react/jsx-uses-vars': 'error',
+    'jsx-a11y/accessible-emoji': 0,
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        assert: 'either',
+      },
+    ],
+    'react/require-default-props': 0,
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.js', '.jsx'],
+      },
+    ],
+    radix: 0,
+    'no-shadow': [
+      2,
+      {
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      },
+    ],
+    quotes: [
+      2,
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
+    semi: ['error', 'never'],
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        singleQuote: true,
+        trailingComma: 'es5',
+        bracketSpacing: true,
+        printWidth: 80,
+        proseWrap: 'never',
+        // below line only for windows users facing CLRF and eslint/prettier error
+        // non windows users feel free to delete it
+        endOfLine: 'auto',
+      },
+    ],
+    'jsx-a11y/href-no-hash': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'warn',
+      {
+        aspects: ['invalidHref'],
+      },
+    ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+  },
+  plugins: ['html', 'react', 'prettier', 'react-hooks'],
 }

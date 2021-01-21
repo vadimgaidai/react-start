@@ -1,0 +1,19 @@
+@import './_mixin.scss';
+@import './_media.scss';
+
+// Fonts
+$reserve-fonts: sans-serif;
+$font-primary: 'OpenSans', $reserve-fonts;
+
+// Colors
+$primary: #282c34;
+$secondary: #fff;
+$link: #61dafb;
+$success: #2ecc71;
+$error: #e74c3c;
+
+// Transition
+$transition: 0.3s;
+
+// Sizes
+$max-width: 1440px;

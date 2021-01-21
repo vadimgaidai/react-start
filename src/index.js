@@ -1,38 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
 
-import store from './redux/store'
-import api from './api/api'
-import { request } from './utils/fetch'
+import Header from './components/Header'
+import App from './App'
+import Footer from './components/Footer'
 
-import * as serviceWorker from './serviceWorker'
+import reportWebVitals from './reportWebVitals'
+
 import './assets/style/index.scss'
-
-import Header from './components/header'
-import App from './containers/App'
-import Footer from './components/footer'
 
 const loader = document.querySelector('.preloader')
 
-api({ request, store })
-
 ReactDOM.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<Header />
-			<App />
-			<Footer />
-		</BrowserRouter>
-	</Provider>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <BrowserRouter>
+      <Header />
+      <App />
+      <Footer />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 )
 
 loader.classList.add('preloader--hide')
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-
-serviceWorker.unregister()
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()

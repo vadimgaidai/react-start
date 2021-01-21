@@ -1,22 +1,22 @@
 * {
-	box-sizing: border-box;
-	-webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
 }
 
 html {
-	overflow: hidden;
-	font-size: 10px;
-	scroll-behavior: smooth;
+  overflow: hidden;
+  font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
-	font: 16px/1.5 $font-primary;
-	background-color: $primary-bg;
+  font: 16px/1.5 $font-primary;
+  background-color: $primary;
 }
 
 html,
@@ -100,14 +100,14 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
 }
 
 .app {
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
