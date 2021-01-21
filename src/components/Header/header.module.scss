@@ -1,29 +1,29 @@
 .section {
-	position: relative;
-	display: grid;
-	padding: 20px;
+  position: relative;
+  display: grid;
+  padding: 20px;
 }
 
 .navigation {
-	justify-self: flex-start;
+  justify-self: flex-start;
 }
 
 .list {
-	display: grid;
-	grid-auto-flow: column;
-	align-content: center;
-	justify-content: center;
-	column-gap: 15px;
-	list-style-type: none;
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  justify-content: center;
+  column-gap: 15px;
+  list-style-type: none;
 }
 
 .link {
-	color: $link-color;
-	font-weight: 300;
-	text-decoration: none;
-	transition: all $primary-transition ease-in;
+  color: $link;
+  font-weight: 300;
+  text-decoration: none;
+  transition: all $transition ease-in;
 
-	&:hover {
-		color: rgba($link-color, 0.5);
-	}
+  &:hover {
+    color: rgba($link, 0.5);
+  }
 }

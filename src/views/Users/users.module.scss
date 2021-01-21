@@ -1,0 +1,29 @@
+.section {
+  padding: 0 15px;
+
+  @include keyframesIcon();
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: $secondary;
+  font-size: 40px;
+  text-align: center;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 20px 0;
+  animation: icon infinite 5s linear;
+  fill: $secondary;
+}
+
+.item {
+  color: $secondary;
+  font-size: 18px;
+  line-height: 35px;
+}
