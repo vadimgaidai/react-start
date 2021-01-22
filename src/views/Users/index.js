@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { section, caption, icon, item } from './users.module.scss'
 
 const Trial = () => {
