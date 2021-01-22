@@ -1,4 +1,3 @@
-// import React from 'react'
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 import { section, logo, link } from './main.module.scss'
 

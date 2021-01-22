@@ -1,4 +1,3 @@
-// import React from 'react'
 import ScrollToTop from 'react-router-scroll-top'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
