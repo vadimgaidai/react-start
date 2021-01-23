@@ -10,7 +10,7 @@ export const request = async ({ url, data, method = 'GET', options }) => {
   })
   return response?.ok
     ? {
-        ...response.json(),
+        data: await response.json(),
         request: response,
       }
     : Promise.reject(response)
