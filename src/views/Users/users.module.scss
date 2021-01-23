@@ -1,7 +1,5 @@
 .section {
   padding: 0 15px;
-
-  @include keyframesIcon();
 }
 
 .caption {
@@ -12,14 +10,6 @@
   color: $secondary;
   font-size: 40px;
   text-align: center;
-}
-
-.icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 20px 0;
-  animation: icon infinite 5s linear;
-  fill: $secondary;
 }
 
 .item {

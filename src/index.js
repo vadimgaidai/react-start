@@ -1,6 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
+import store from './redux/store'
+import api from './api/api'
+import { request } from './utils/fetch'
 
 import Header from './components/Header'
 import App from './App'
@@ -12,14 +17,16 @@ import './assets/style/index.scss'
 
 const loader = document.querySelector('.preloader')
 
+api({ request, store })
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <Header />
       <App />
       <Footer />
     </BrowserRouter>
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 
