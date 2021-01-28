@@ -1,8 +1,9 @@
 import { call, put } from 'redux-saga/effects'
+import api from '../../api'
 import { setUsers } from '../modules/users'
 
 const loadUsers = async () => {
-  const { data } = await window.$api.users.getUsers()
+  const { data } = await api.users.getUsers()
   return data
 }
 
