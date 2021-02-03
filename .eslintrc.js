@@ -2,7 +2,7 @@ module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react', 'react-app'],
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
     ecmaFeatures: {
       impliedStrict: true,
       classes: true,

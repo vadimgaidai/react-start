@@ -6,7 +6,7 @@ import {
 import createSagaMiddleware from 'redux-saga'
 
 import users from './modules/users'
-import saga from './rootSaga'
+import sagas from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [
@@ -26,6 +26,6 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
 })
 
-sagaMiddleware.run(saga)
+sagaMiddleware.run(sagas)
 
 export default store
