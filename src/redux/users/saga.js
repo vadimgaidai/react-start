@@ -1,5 +1,5 @@
 import { call, put } from 'redux-saga/effects'
-import { getUsers } from '../../../api/users'
+import { getUsers } from '../../api/users'
 
 import { setUsers } from './index'
 

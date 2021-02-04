@@ -137,6 +137,7 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/comma-dangle': ['off'],
   },
   plugins: ['html', 'react', 'prettier', 'react-hooks'],
 }

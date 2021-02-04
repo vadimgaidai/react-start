@@ -5,7 +5,7 @@ import {
 } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
 
-import users from './modules/users'
+import users from './users'
 import sagas from './sagas'
 
 const sagaMiddleware = createSagaMiddleware()
