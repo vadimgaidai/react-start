@@ -14,6 +14,11 @@ module.exports = {
     react: {
       version: 'latest',
     },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
   env: {
     browser: true,
@@ -93,9 +98,7 @@ module.exports = {
     'react/require-default-props': 0,
     'react/jsx-filename-extension': [
       1,
-      {
-        extensions: ['.js', '.jsx'],
-      },
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     radix: 0,
     'no-shadow': [

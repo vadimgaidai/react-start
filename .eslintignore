@@ -1,3 +1,4 @@
 /build/*
 /scripts/*
 /config/*
+react-app-env.d.ts

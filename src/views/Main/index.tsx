@@ -1,14 +1,15 @@
+import { FC } from 'react'
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
-import { section, logo, link } from './main.module.scss'
+import style from './main.module.scss'
 
-const Index = () => (
-  <main className={section}>
-    <Logo className={logo} />
+const Main: FC = () => (
+  <main className={style.section}>
+    <Logo className={style.logo} />
     <p>
       Edit <code>src/App.js</code> and save to reload.
     </p>
     <a
-      className={link}
+      className={style.link}
       href="https://reactjs.org"
       target="_blank"
       rel="noopener noreferrer"
@@ -18,4 +19,4 @@ const Index = () => (
   </main>
 )
 
-export default Index
+export default Main

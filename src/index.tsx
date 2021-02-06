@@ -13,7 +13,7 @@ import reportWebVitals from './reportWebVitals'
 
 import './assets/style/index.scss'
 
-const loader = document.querySelector('.preloader')
+const loader: HTMLElement | null = document.querySelector('.preloader')
 
 ReactDOM.render(
   <Provider store={store}>
@@ -26,7 +26,7 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-loader.classList.add('preloader--hide')
+loader?.classList.add('preloader--hide')
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
