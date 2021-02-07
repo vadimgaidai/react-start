@@ -1,6 +1,13 @@
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react', 'react-app'],
-  parser: 'babel-eslint',
+  extends: [
+    'airbnb',
+    'react-app',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2021,
     ecmaFeatures: {
