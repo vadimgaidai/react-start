@@ -1,8 +1,8 @@
-interface Request {
+interface Fetch {
   url: string
-  data?: unknown
-  method: string
-  headers: {
+  body?: unknown
+  method?: string
+  headers?: {
     [name: string]: string
   }
 }
@@ -11,21 +11,24 @@ const defaultHeaders = {
   'Content-Type': 'application/json',
 }
 
-export const request = async ({
+export async function request<TResponse>({
   url,
-  data,
+  body,
   method = 'GET',
   headers = defaultHeaders,
-}: Request): Promise<unknown> => {
+}: Fetch): Promise<TResponse> {
   const response = await fetch(url, {
     method,
-    body: JSON.stringify(data),
+    body: JSON.stringify(body),
     headers,
   })
+  const data = await response.json()
+  console.log(data)
+
   return response?.ok
     ? {
-        data: await response.json(),
-        request: response,
+        ...data,
+        ...response,
       }
     : Promise.reject(response)
 }

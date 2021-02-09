@@ -44,13 +44,6 @@ module.exports = {
     ],
     'no-empty': ['error', { allowEmptyCatch: true }],
     'no-tabs': ['error', { allowIndentationTabs: true }],
-    'no-unused-vars': [
-      1,
-      {
-        ignoreRestSiblings: true,
-        argsIgnorePattern: 'res|next|^err',
-      },
-    ],
     'prefer-const': [
       'error',
       {
@@ -108,13 +101,6 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     radix: 0,
-    'no-shadow': [
-      2,
-      {
-        hoist: 'all',
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
-      },
-    ],
     quotes: [
       2,
       'single',
@@ -147,7 +133,23 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    '@typescript-eslint/comma-dangle': ['off'],
+    'no-shadow': 0,
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: 'res|next|^err',
+      },
+    ],
+    '@typescript-eslint/no-shadow': [
+      2,
+      {
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      },
+    ],
+    '@typescript-eslint/comma-dangle': 0,
   },
   plugins: ['html', 'react', 'prettier', 'react-hooks'],
 }
