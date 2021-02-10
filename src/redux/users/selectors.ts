@@ -1,4 +1,4 @@
-import { LoadingStatus, StateStatus } from '../currentTypes'
+import { LoadingStatus, ErrorStatus } from '../currentTypes'
 import { RootState } from '../store'
 import { State, User } from './types'
 
@@ -7,14 +7,14 @@ export const selectUsersState = (state: RootState): State => state.users
 export const selectUsers = (state: RootState): User[] =>
   selectUsersState(state).users
 
-export const selectLoadingStatus = (state: RootState): StateStatus =>
-  selectUsersState(state).stateStatus
+export const selectLoadingStatus = (state: RootState): LoadingStatus =>
+  selectUsersState(state).loading
 
 export const selectIsUsersLoading = (state: RootState): boolean =>
-  selectLoadingStatus(state).loading === LoadingStatus.LOADING
+  selectLoadingStatus(state) === LoadingStatus.LOADING
 
 export const selectIsUsersLoaded = (state: RootState): boolean =>
-  selectLoadingStatus(state).loading === LoadingStatus.LOADED
+  selectLoadingStatus(state) === LoadingStatus.LOADED
 
-export const selectIsUsersErrorLoaded = (state: RootState): boolean =>
-  selectLoadingStatus(state).loading === LoadingStatus.ERROR
+export const selectErrorStatus = (state: RootState): ErrorStatus =>
+  selectUsersState(state).error

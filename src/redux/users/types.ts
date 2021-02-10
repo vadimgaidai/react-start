@@ -1,4 +1,4 @@
-import { StateStatus } from '../currentTypes'
+import { LoadingStatus, ErrorStatus } from '../currentTypes'
 
 export enum UsersActionsType {
   LOAD_USERS = 'users/LOAD_USERS',
@@ -15,5 +15,6 @@ export interface User {
 
 export interface State {
   users: User[]
-  stateStatus: StateStatus
+  loading: LoadingStatus
+  error: ErrorStatus
 }
