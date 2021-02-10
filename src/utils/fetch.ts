@@ -1,6 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export interface ResponseApi {
+  data: any
+  status: number
+}
+
 interface Fetch {
   url: string
-  body?: unknown
+  body?: any
   method?: string
   headers?: {
     [name: string]: string
@@ -11,12 +17,12 @@ const defaultHeaders = {
   'Content-Type': 'application/json',
 }
 
-export async function request<TResponse>({
+export async function request({
   url,
   body,
   method = 'GET',
   headers = defaultHeaders,
-}: Fetch): Promise<TResponse> {
+}: Fetch): Promise<ResponseApi> {
   const response = await fetch(url, {
     method,
     body: JSON.stringify(body),
@@ -26,8 +32,8 @@ export async function request<TResponse>({
 
   return response?.ok
     ? {
-        ...data,
-        ...response,
+        data: { ...data },
+        status: response.status,
       }
     : Promise.reject(response)
 }

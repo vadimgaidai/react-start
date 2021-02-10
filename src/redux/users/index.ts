@@ -13,7 +13,7 @@ const { actions, reducer } = createSlice({
     setUsers(state, { payload }: PayloadAction<Array<User>>) {
       state.users = payload
     },
-    setUsersStateStatus(state, { payload }: PayloadAction<LoadingStatus>) {
+    setUsersLoadingStatus(state, { payload }: PayloadAction<LoadingStatus>) {
       state.loading = payload
     },
     setUsersErrorStatus(state, { payload }: PayloadAction<ErrorStatus>) {
@@ -22,5 +22,5 @@ const { actions, reducer } = createSlice({
   },
 })
 
-export const { setUsers, setUsersStateStatus, setUsersErrorStatus } = actions
+export const { setUsers, setUsersLoadingStatus, setUsersErrorStatus } = actions
 export default reducer

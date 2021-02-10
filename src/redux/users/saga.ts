@@ -1,26 +1,28 @@
-import { call, put, takeEvery } from 'redux-saga/effects'
+import { call, put, takeLatest } from 'redux-saga/effects'
 
-import { User, UsersActionsType } from './types'
 import { getUsers } from '../../api/users'
-import { setUsers, setUsersErrorStatus, setUsersStateStatus } from './index'
 import { LoadingStatus } from '../currentTypes'
+import { UsersActionsType } from './types'
 
-const fetchUsers = async () => {
-  const { data } = await getUsers()
+import { setUsers, setUsersErrorStatus, setUsersLoadingStatus } from './index'
+import { ResponseApi } from '../../utils/fetch'
+
+const fetchUsers = async (): Promise<ResponseApi> => {
+  const { data }: ResponseApi = await getUsers()
   return data
 }
 
 export function* loadUsers(): Generator {
-  yield put(setUsersStateStatus(LoadingStatus.LOADING))
+  yield put(setUsersLoadingStatus(LoadingStatus.LOADING))
   try {
-    const payload: User[] = yield call(() => fetchUsers())
-    yield put(setUsers(payload))
+    const { data }: ReturnType<typeof Object> = yield call(fetchUsers)
+    yield put(setUsers(data))
   } catch ({ status }) {
     yield put(setUsersErrorStatus(status))
   }
-  yield put(setUsersStateStatus(LoadingStatus.LOADED))
+  yield put(setUsersLoadingStatus(LoadingStatus.LOADED))
 }
 
 export function* usersSaga(): Generator {
-  yield takeEvery(UsersActionsType.LOAD_USERS, loadUsers)
+  yield takeLatest(UsersActionsType.LOAD_USERS, loadUsers)
 }
