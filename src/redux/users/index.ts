@@ -10,13 +10,17 @@ const { actions, reducer } = createSlice({
     error: null,
   } as State,
   reducers: {
-    setUsers(state, { payload }: PayloadAction<Array<User>>) {
+    setUsers(state: State, { payload }: PayloadAction<User[]>) {
       state.users = payload
+      state.loading = LoadingStatus.LOADED
     },
-    setUsersLoadingStatus(state, { payload }: PayloadAction<LoadingStatus>) {
+    setUsersLoadingStatus(
+      state: State,
+      { payload }: PayloadAction<LoadingStatus>
+    ) {
       state.loading = payload
     },
-    setUsersErrorStatus(state, { payload }: PayloadAction<ErrorStatus>) {
+    setUsersErrorStatus(state: State, { payload }: PayloadAction<ErrorStatus>) {
       state.error = payload
     },
   },

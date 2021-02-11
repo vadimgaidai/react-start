@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ResponseApi {
-  data: any
+  payload: any
   status: number
 }
 
@@ -32,7 +32,7 @@ export async function request({
 
   return response?.ok
     ? {
-        data: { ...data },
+        payload: { ...data },
         status: response.status,
       }
     : Promise.reject(response)

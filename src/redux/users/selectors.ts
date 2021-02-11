@@ -16,5 +16,8 @@ export const selectIsUsersLoading = (state: RootState): boolean =>
 export const selectIsUsersLoaded = (state: RootState): boolean =>
   selectLoadingStatus(state) === LoadingStatus.LOADED
 
+export const selectIsUsersErrorLoaded = (state: RootState): boolean =>
+  selectLoadingStatus(state) === LoadingStatus.ERROR
+
 export const selectErrorStatus = (state: RootState): ErrorStatus =>
   selectUsersState(state).error
