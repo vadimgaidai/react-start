@@ -5,7 +5,7 @@ export enum UsersActionsType {
 }
 
 /* eslint-disable camelcase */
-export interface User {
+export interface UserType {
   id: number
   email: string
   first_name: string
@@ -13,8 +13,8 @@ export interface User {
   avatar: string
 }
 
-export interface State {
-  users: User[]
+export interface StateType {
+  users: UserType[]
   loading: LoadingStatus
   error: ErrorStatus
 }

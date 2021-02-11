@@ -6,14 +6,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   color: $secondary;
   font-size: 40px;
   text-align: center;
 }
 
-.item {
-  color: $secondary;
-  font-size: 18px;
-  line-height: 35px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+
+  @include media('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('mobile') {
+    grid-template-columns: 1fr;
+  }
 }

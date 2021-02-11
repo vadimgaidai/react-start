@@ -1,10 +1,10 @@
 import { LoadingStatus, ErrorStatus } from '../currentTypes'
 import { RootState } from '../store'
-import { State, User } from './types'
+import { StateType, UserType } from './types'
 
-export const selectUsersState = (state: RootState): State => state.users
+export const selectUsersState = (state: RootState): StateType => state.users
 
-export const selectUsers = (state: RootState): User[] =>
+export const selectUsers = (state: RootState): UserType[] =>
   selectUsersState(state).users
 
 export const selectLoadingStatus = (state: RootState): LoadingStatus =>

@@ -9,12 +9,13 @@
 }
 
 html {
-  font-size: 10px;
   scroll-behavior: smooth;
 }
 
 body {
-  font: 16px/1.5 $font-primary;
+  overflow-x: hidden;
+  font: 16px/1.5 $font-primary, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
   background-color: $primary;
 }
 

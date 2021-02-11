@@ -9,9 +9,9 @@ import { setUsers, setUsersErrorStatus, setUsersLoadingStatus } from './index'
 export function* loadUsers(): Generator {
   try {
     yield put(setUsersLoadingStatus(LoadingStatus.LOADING))
-    const payload: ReturnType<typeof Object> = yield call(fetchUsers)
-    yield put(setUsers(payload))
-    yield put(setUsersErrorStatus(null))
+    const { data }: ReturnType<typeof Object> = yield call(fetchUsers)
+    yield put(setUsers(data))
+    yield put(setUsersErrorStatus(200))
   } catch ({ status }) {
     yield put(setUsersLoadingStatus(LoadingStatus.ERROR))
     yield put(setUsersErrorStatus(status))
