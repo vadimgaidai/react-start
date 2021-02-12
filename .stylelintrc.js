@@ -7,5 +7,8 @@ module.exports = {
   plugins: ['stylelint-order', 'stylelint-scss'],
   rules: {
     'max-nesting-depth': 4,
+    'declaration-property-value-disallowed-list': {
+      '/^border/': ['none'],
+    },
   },
 }
