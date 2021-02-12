@@ -2,14 +2,17 @@ module.exports = {
   extends: [
     'airbnb',
     'react-app',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
     'prettier',
-    'prettier/@typescript-eslint',
     'prettier/react',
+    'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 12,
+    sourceType: 'module',
     ecmaFeatures: {
       impliedStrict: true,
       classes: true,
@@ -30,8 +33,33 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es2021: true,
   },
+  plugins: [
+    'html',
+    'react',
+    'prettier',
+    'react-hooks',
+    '@typescript-eslint/eslint-plugin',
+  ],
   rules: {
+    '@typescript-eslint/no-inferrable-types': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: 'res|next|^err',
+      },
+    ],
+    '@typescript-eslint/no-shadow': [
+      2,
+      {
+        hoist: 'all',
+        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      },
+    ],
+    'flowtype/no-types-missing-file-annotation': 0,
     'no-debugger': 0,
     'no-alert': 0,
     'no-await-in-loop': 0,
@@ -44,13 +72,13 @@ module.exports = {
     ],
     'no-empty': ['error', { allowEmptyCatch: true }],
     'no-tabs': ['error', { allowIndentationTabs: true }],
-    'prefer-const': [
-      'error',
+    'no-plusplus': 0,
+    'no-param-reassign': [
+      2,
       {
-        destructuring: 'all',
+        props: false,
       },
     ],
-    'arrow-body-style': [2, 'as-needed'],
     'no-unused-expressions': [
       2,
       {
@@ -63,14 +91,18 @@ module.exports = {
         functions: false,
       },
     ],
-    'no-plusplus': 0,
-    'no-param-reassign': [
-      2,
+    'no-console': 0,
+    'no-shadow': 0,
+    'no-unused-vars': 0,
+    'eslint-disable max-classes-per-file': 0,
+    'eslint-disable lines-between-class-members': 0,
+    'prefer-const': [
+      'error',
       {
-        props: false,
+        destructuring: 'all',
       },
     ],
-    'no-console': 0,
+    'arrow-body-style': [2, 'as-needed'],
     'import/no-anonymous-default-export': [2, { allowArrowFunction: true }],
     'import/prefer-default-export': 0,
     import: 0,
@@ -134,24 +166,5 @@ module.exports = {
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'no-shadow': 0,
-    'no-unused-vars': 0,
-    '@typescript-eslint/react/jsx-fragments': 0,
-    '@typescript-eslint/no-unused-vars': [
-      1,
-      {
-        ignoreRestSiblings: true,
-        argsIgnorePattern: 'res|next|^err',
-      },
-    ],
-    '@typescript-eslint/no-shadow': [
-      2,
-      {
-        hoist: 'all',
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
-      },
-    ],
-    '@typescript-eslint/comma-dangle': 0,
   },
-  plugins: ['html', 'react', 'prettier', 'react-hooks'],
 }

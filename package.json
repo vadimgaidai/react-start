@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
     "style": "stylelint **/*{.css,.scss}",
     "style:fix": "stylelint **/*{.css,.scss} --fix"
   },
