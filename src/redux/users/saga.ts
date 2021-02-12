@@ -11,7 +11,6 @@ export function* loadUsers(): Generator {
     yield put(setUsersLoadingStatus(LoadingStatus.LOADING))
     const { data }: ReturnType<typeof Object> = yield call(fetchUsers)
     yield put(setUsers(data))
-    yield put(setUsersErrorStatus(200))
   } catch ({ status }) {
     yield put(setUsersLoadingStatus(LoadingStatus.ERROR))
     yield put(setUsersErrorStatus(status))

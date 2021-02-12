@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
-import logger from 'redux-logger'
 
 import users from './users'
 import sagas from './sagas'
@@ -16,7 +15,7 @@ const store = configureStore({
       immutableCheck: true,
       serializableCheck: true,
       thunk: false,
-    }).concat(sagaMiddleware, logger),
+    }).concat(sagaMiddleware),
   devTools: process.env.NODE_ENV !== 'production',
 })
 

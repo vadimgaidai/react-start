@@ -111,3 +111,22 @@ video {
   grid-template-rows: auto 1fr auto;
   height: 100vh;
 }
+
+.fade {
+  &-enter {
+    opacity: 0;
+
+    &-active {
+      opacity: 1;
+      transition: opacity $transition ease-in;
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+    &-active {
+      opacity: 0;
+      transition: opacity $transition ease-in-out;
+    }
+  }
+}

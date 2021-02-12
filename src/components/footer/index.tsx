@@ -3,7 +3,12 @@ import style from './footer.module.scss'
 
 const Footer: FC = () => (
   <footer className={style.section}>
-    <a className={style.link} href="https://github.com/vadimgaidai">
+    <a
+      className={style.link}
+      href="https://github.com/vadimgaidai/react-start"
+      rel="noreferrer"
+      target="_blank"
+    >
       @github
     </a>
   </footer>

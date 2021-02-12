@@ -95,6 +95,7 @@ module.exports = {
         assert: 'either',
       },
     ],
+    'react/jsx-fragments': 0,
     'react/require-default-props': 0,
     'react/jsx-filename-extension': [
       1,
@@ -135,6 +136,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'no-shadow': 0,
     'no-unused-vars': 0,
+    '@typescript-eslint/react/jsx-fragments': 0,
     '@typescript-eslint/no-unused-vars': [
       1,
       {
